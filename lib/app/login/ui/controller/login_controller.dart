@@ -22,7 +22,6 @@ abstract class _LoginController with Store {
       email: email,
       password: password,
     );
-    isLoading = false;
     if (user != null) {
       return true;
     }

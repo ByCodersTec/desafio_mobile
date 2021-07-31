@@ -11,7 +11,7 @@ Widget buildProgressIndicator({
         child: Align(
           alignment: aligment ?? Alignment.center,
           child: const CircularProgressIndicator(
-            backgroundColor: Colors.orange,
+            backgroundColor: Colors.red,
             strokeWidth: 3,
           ),
         ),
