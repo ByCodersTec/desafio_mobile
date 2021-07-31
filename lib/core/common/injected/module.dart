@@ -1,5 +1,12 @@
-import 'package:desafio_mobile/app/common/local_storage/local_storage_dao.dart';
-import 'package:desafio_mobile/app/common/local_storage/local_storage_imp_dao.dart';
+import 'package:desafio_mobile/app/common/db_storage/db_storage_dao.dart';
+import 'package:desafio_mobile/app/common/db_storage/db_storage_imp_dao.dart';
+import 'package:desafio_mobile/app/common/store/global_store.dart';
+import 'package:desafio_mobile/app/home/data/datasource/home_datasource.dart';
+import 'package:desafio_mobile/app/home/data/datasource/home_datasource_imp.dart';
+import 'package:desafio_mobile/app/home/data/repository/home_repository_imp.dart';
+import 'package:desafio_mobile/app/home/domain/repository/home_repository.dart';
+import 'package:desafio_mobile/app/home/domain/usecase/save_user_info_in_db_usecase.dart';
+import 'package:desafio_mobile/app/home/ui/controller/home_controller.dart';
 import 'package:desafio_mobile/app/login/data/datasource/login_datasource.dart';
 import 'package:desafio_mobile/app/login/data/datasource/login_datasource_imp.dart';
 import 'package:desafio_mobile/app/login/data/repository/login_repository_imp.dart';
@@ -12,7 +19,7 @@ final GetIt getIt = GetIt.instance;
 
 Future<void> configureInjection() async {
   getIt
-    ..registerLazySingleton<LocalStorageDao>(() => LocalStorageImpDao())
+    ..registerLazySingleton<DbStorageDao>(() => DbStorageImpDao())
     ..registerLazySingleton(() => SignInWithEmailAndPasswordUsecase())
     ..registerLazySingleton<LoginDatasource>(
       () => LoginDatasourceImp(),
@@ -20,6 +27,15 @@ Future<void> configureInjection() async {
     ..registerLazySingleton<LoginRepository>(
       () => LoginRepositoryImp(),
     )
-    ..registerFactory(() => LoginController());
+    ..registerFactory(() => LoginController())
+    ..registerLazySingleton(() => SaveUserInfoInDbUsecase())
+    ..registerLazySingleton<HomeDatasource>(
+      () => HomeDatasourceImp(),
+    )
+    ..registerLazySingleton<HomeRepository>(
+      () => HomeRepositoryImp(),
+    )
+    ..registerFactory(() => HomeController())
+    ..registerLazySingleton(() => GlobalStore());
   // getIt.registerLazySingleton(() => ThemeStore());
 }

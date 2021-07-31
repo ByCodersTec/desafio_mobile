@@ -1,6 +1,6 @@
 import 'package:desafio_mobile/core/common/utils/api_result_utils.dart';
 
-abstract class LocalStorageDao {
+abstract class DbStorageDao {
   Future<ApiResult> clearCollection(
     String collectionName,
   );

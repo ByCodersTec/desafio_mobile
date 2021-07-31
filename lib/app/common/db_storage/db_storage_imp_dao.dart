@@ -1,11 +1,11 @@
-import 'package:desafio_mobile/app/common/local_storage/local_storage_dao.dart';
-import 'package:desafio_mobile/app/common/local_storage/sembest_storage.dart';
+import 'package:desafio_mobile/app/common/db_storage/db_storage_dao.dart';
+import 'package:desafio_mobile/app/common/db_storage/sembast_storage.dart';
 import 'package:desafio_mobile/core/common/utils/api_result_utils.dart';
 
 import 'package:sembast/sembast.dart';
 
-class LocalStorageImpDao implements LocalStorageDao {
-  Future<Database> get _db async => SembestStorage.instance.database;
+class DbStorageImpDao implements DbStorageDao {
+  Future<Database> get _db async => SembastStorage.instance.database;
 
   @override
   Future<ApiResult> clearCollection(

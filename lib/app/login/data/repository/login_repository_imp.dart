@@ -19,10 +19,6 @@ class LoginRepositoryImp implements LoginRepository {
       ),
     );
 
-    if (user != null) {
-      _datasource.saveUser(user);
-    }
-
     return user;
   }
 }

@@ -5,14 +5,14 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_io.dart';
 
-class SembestStorage {
-  static final SembestStorage _singleton = SembestStorage._();
+class SembastStorage {
+  static final SembastStorage _singleton = SembastStorage._();
 
-  static SembestStorage get instance => _singleton;
+  static SembastStorage get instance => _singleton;
 
   Completer<Database>? _dbOpenCompleter;
 
-  SembestStorage._();
+  SembastStorage._();
 
   Future<Database> get database async {
     if (_dbOpenCompleter == null) {
