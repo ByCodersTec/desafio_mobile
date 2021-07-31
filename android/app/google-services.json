@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "699617885664",
+    "project_id": "desafio-bycoders",
+    "storage_bucket": "desafio-bycoders.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699617885664:android:d56e302e7ef52076d77f85",
+        "android_client_info": {
+          "package_name": "com.arthurmasson.desafio_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699617885664-ofhnv07n5i56qaou6mfrbpr2g6rlvna3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKqKkQ-H7mpsZT4bZJDpGJBBHmqdJUVCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699617885664-ofhnv07n5i56qaou6mfrbpr2g6rlvna3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
