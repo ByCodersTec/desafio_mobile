@@ -10,7 +10,10 @@ abstract class _GlobalStore with Store {
   User? currentUser;
 
   @computed
-  User get getCurrentUser => currentUser!;
+  User? get getCurrentUser => currentUser;
+
+  @computed
+  bool get hasCurrentUser => currentUser != null;
 
   @action
   void setCurrentUser(User newUser) {

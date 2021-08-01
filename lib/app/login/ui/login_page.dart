@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(
-                height: 25.h,
+                height: 50.h,
               ),
               CustomFieldText(
                 label: 'Email',
@@ -105,10 +105,11 @@ class _LoginPageState extends State<LoginPage> {
     )) {
       Navigator.pushReplacementNamed(context, '/');
     } else {
+      controller.isLoading = false;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            "Email ou senha inválidos",
+            'Email ou senha inválidos',
             style: _fontDescriptionStyle(color: Colors.white),
           ),
         ),

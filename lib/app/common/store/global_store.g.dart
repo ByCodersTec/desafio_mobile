@@ -9,12 +9,19 @@ part of 'global_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$GlobalStore on _GlobalStore, Store {
-  Computed<User>? _$getCurrentUserComputed;
+  Computed<User?>? _$getCurrentUserComputed;
 
   @override
-  User get getCurrentUser =>
-      (_$getCurrentUserComputed ??= Computed<User>(() => super.getCurrentUser,
+  User? get getCurrentUser =>
+      (_$getCurrentUserComputed ??= Computed<User?>(() => super.getCurrentUser,
               name: '_GlobalStore.getCurrentUser'))
+          .value;
+  Computed<bool>? _$hasCurrentUserComputed;
+
+  @override
+  bool get hasCurrentUser =>
+      (_$hasCurrentUserComputed ??= Computed<bool>(() => super.hasCurrentUser,
+              name: '_GlobalStore.hasCurrentUser'))
           .value;
 
   final _$currentUserAtom = Atom(name: '_GlobalStore.currentUser');
@@ -49,7 +56,8 @@ mixin _$GlobalStore on _GlobalStore, Store {
   String toString() {
     return '''
 currentUser: ${currentUser},
-getCurrentUser: ${getCurrentUser}
+getCurrentUser: ${getCurrentUser},
+hasCurrentUser: ${hasCurrentUser}
     ''';
   }
 }

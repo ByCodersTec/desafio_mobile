@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:desafio_mobile/app/common/widgets/custom_progress_indicator.dart';
 import 'package:desafio_mobile/app/home/ui/controller/home_controller.dart';
 import 'package:desafio_mobile/core/common/injected/module.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
