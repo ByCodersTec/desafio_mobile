@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../utils/models/auth.dart';
+import '../../data/adapters/auth.dart';
 import '../entities/user.dart';
 import '../errors/errors.dart';
 import '../repositories/auth_repository.dart';
