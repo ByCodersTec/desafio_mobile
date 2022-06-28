@@ -1,14 +1,15 @@
-import 'package:desafio_mobile/src/app_module.dart';
+import 'package:desafio_mobile/route_generator.dart';
+import 'package:desafio_mobile/shell.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  Intl.defaultLocale = 'pt_BR';
-  runApp(ModularApp(module: AppModule(), child: const MyApp()));
+
+  runApp(const Shell(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,11 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      routeInformationParser: Modular.routeInformationParser,
-      routerDelegate: Modular.routerDelegate,
+      initialRoute: '/login',
+      onGenerateRoute: RouteGenerator.generatorRoute,
+      navigatorObservers: [context.read<FirebaseAnalyticsObserver>()],
     );
   }
 }

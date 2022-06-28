@@ -38,11 +38,11 @@ dependencies:
   dartz: ^0.10.1
   firebase_auth: ^3.3.20
   cloud_firestore: ^3.1.18
-  intl: ^0.17.0
   flutter_bloc: ^8.0.1
   flutter_modular: ^5.0.3
   flutter_form_builder: ^7.3.1
   form_builder_validators: ^8.1.1
+  firebase_analytics: ^9.1.10
 
 dev_dependencies:
   flutter_test:
