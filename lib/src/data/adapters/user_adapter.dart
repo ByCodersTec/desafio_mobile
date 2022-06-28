@@ -5,8 +5,8 @@ class UserAdapter {
 
   static User fromJson(Map<String, dynamic> data) {
     return User(
-      name: data['name'],
-      sobreNome: data['sobre_nome'],
+      uid: data['uid'],
+      email: data['email'],
     );
   }
 }

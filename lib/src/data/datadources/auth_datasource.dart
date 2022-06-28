@@ -1,5 +1,5 @@
-import '../adapters/auth.dart';
+import '../../shared/data_struct/auth.dart';
 
 abstract class IAuthDatasource {
-  Future<void> authUser(AuthUser authUser);
+  Future<Map<String, dynamic>> authUser(AuthUser authUser);
 }
