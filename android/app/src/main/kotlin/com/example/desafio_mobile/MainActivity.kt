@@ -1,4 +1,4 @@
-package com.example.desafio_mobile
+package com.gmail.jaksonpaulino65.desafio_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
