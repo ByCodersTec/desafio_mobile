@@ -1,19 +1,27 @@
 import 'package:dartz/dartz.dart';
-import '../../data/adapters/auth.dart';
+import '../../shared/data_struct/auth.dart';
 import '../entities/user.dart';
 import '../errors/errors.dart';
 import '../repositories/auth_repository.dart';
 
-abstract class IAuthUser {
+abstract class IAuthUserUsecase {
   Future<Either<IErrorsException, User>> call(AuthUser authUser);
 }
 
-class AuthUserUsecase implements IAuthUser {
+class AuthUserUsecase implements IAuthUserUsecase {
   final IAuthRepository _repository;
 
   AuthUserUsecase(this._repository);
 
   @override
-  Future<Either<IErrorsException, User>> call(AuthUser authUser) async =>
-      await _repository.authUser(authUser);
+  Future<Either<IErrorsException, User>> call(AuthUser authUser) async {
+    if (authUser.email.isEmpty) {
+      return left(const AuthException('login is empty'));
+    }
+    if (authUser.email.isEmpty) {
+      return left(const AuthException('password is empty'));
+    }
+    final result = await _repository.authUser(authUser);
+    return result;
+  }
 }
