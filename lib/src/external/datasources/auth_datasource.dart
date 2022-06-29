@@ -2,14 +2,20 @@ import 'package:desafio_mobile/src/data/datadources/auth_datasource.dart';
 import 'package:desafio_mobile/src/domain/errors/errors.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 import '../../shared/data_struct/auth.dart';
 
 class AuthDatasource implements IAuthDatasource {
-  final FirebaseAuth _firebaseAuth;
-  final FirebaseAnalytics _analytics;
+  final FirebaseAuth firebaseAuth;
+  final FirebaseAnalytics analytics;
+  final FirebaseCrashlytics crashlytics;
 
-  AuthDatasource(this._firebaseAuth, this._analytics);
+  AuthDatasource({
+    required this.firebaseAuth,
+    required this.analytics,
+    required this.crashlytics,
+  });
 
   Map<String, dynamic> _getMapUser(User user) {
     return {'uid': user.uid, 'email': user.email};
@@ -18,15 +24,21 @@ class AuthDatasource implements IAuthDatasource {
   @override
   Future<Map<String, dynamic>> authUser(AuthUser authUser) async {
     try {
-      final authResult = await _firebaseAuth.signInWithEmailAndPassword(
+      final authResult = await firebaseAuth.signInWithEmailAndPassword(
           email: authUser.email, password: authUser.password);
 
       // email: 'jaksonpaulino@gmail.com', password: 'cristorei002');
 
-      _analytics.logLogin(loginMethod: authResult.user!.email);
+      analytics.logLogin(loginMethod: authResult.user!.email);
 
       return _getMapUser(authResult.user!);
     } on FirebaseAuthException catch (e, s) {
+      crashlytics.setCustomKey(
+        'outer layer',
+        'authUser method in external/datasource/auth_datadource',
+      );
+      crashlytics.recordError(e.message!, s);
+
       throw DatasourcePostException(e.message!, s);
     }
   }

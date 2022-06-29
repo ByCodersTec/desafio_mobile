@@ -1,12 +1,20 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: ListView(children: [
+        ElevatedButton(
+            onPressed: () {
+              context.read<FirebaseCrashlytics>().crash();
+            },
+            child: const Text('Forcing a crash'))
+      ]),
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'src/data/repositories/auth_repository.dart';
@@ -15,8 +16,12 @@ class Shell extends StatelessWidget {
   static final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
   static final FirebaseAnalyticsObserver _observer =
       FirebaseAnalyticsObserver(analytics: _analytics);
+  static final crashlytics = FirebaseCrashlytics.instance;
 
   List<RepositoryProvider> get listRepositoryProvider => [
+        RepositoryProvider<FirebaseCrashlytics>(
+          create: (context) => crashlytics,
+        ),
         RepositoryProvider<FirebaseAnalyticsObserver>(
           create: (context) => _observer,
         ),
@@ -30,7 +35,11 @@ class Shell extends StatelessWidget {
           create: (context) {
             final firebaseAuth = context.read<FirebaseAuth>();
             final analytics = context.read<FirebaseAnalytics>();
-            return AuthDatasource(firebaseAuth, analytics);
+            return AuthDatasource(
+              firebaseAuth: firebaseAuth,
+              analytics: analytics,
+              crashlytics: crashlytics,
+            );
           },
         ),
         RepositoryProvider<AuthRepository>(
