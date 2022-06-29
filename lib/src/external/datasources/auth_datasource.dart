@@ -27,8 +27,6 @@ class AuthDatasource implements IAuthDatasource {
       final authResult = await firebaseAuth.signInWithEmailAndPassword(
           email: authUser.email, password: authUser.password);
 
-      // email: 'jaksonpaulino@gmail.com', password: 'cristorei002');
-
       analytics.logLogin(loginMethod: authResult.user!.email);
 
       return _getMapUser(authResult.user!);

@@ -44,6 +44,7 @@ dependencies:
   form_builder_validators: ^8.1.1
   firebase_analytics: ^9.1.10
   firebase_crashlytics: ^2.8.2
+  moor_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   mocktail: ^0.3.0
+  moor_generator: ^4.6.0+1
+  build_runner: ^2.1.11
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

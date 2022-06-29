@@ -1,3 +1,5 @@
+import 'package:desafio_mobile/src/external/database/app_database.dart';
+import 'package:desafio_mobile/src/external/datasources/db_datasource.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -17,8 +19,16 @@ class Shell extends StatelessWidget {
   static final FirebaseAnalyticsObserver _observer =
       FirebaseAnalyticsObserver(analytics: _analytics);
   static final crashlytics = FirebaseCrashlytics.instance;
+  static final db = AppDatabase.instance;
 
   List<RepositoryProvider> get listRepositoryProvider => [
+        RepositoryProvider<AppDatabase>(
+          create: (context) => db,
+        ),
+        RepositoryProvider<DBDatasource>(create: (context) {
+          final db = context.read<AppDatabase>();
+          return DBDatasource(db);
+        }),
         RepositoryProvider<FirebaseCrashlytics>(
           create: (context) => crashlytics,
         ),

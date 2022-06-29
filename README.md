@@ -11,12 +11,12 @@ Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quise
 
 # Descrição do projeto
 
-1. Tela de login usando (email e senha);
+1. Tela de login usando (email e senha); - OK
 2. Tela home com mapa renderizando um ponto na localização atual do device;
-3. Realizar o login utilizando Firebase Auth;
-4. Armazenar os dados do usuário na store global;
-5. Rastrear login com sucesso e renderização com sucesso com Analytics (enviar um evento com dados considerados primordiais nesses dois casos);
-6. Rastrear os erros e envia-los ao Crashlytics;
+3. Realizar o login utilizando Firebase Auth; - OK
+4. Armazenar os dados do usuário na store global; - OK
+5. Rastrear login com sucesso e renderização com sucesso com Analytics (enviar um evento com dados considerados primordiais nesses dois casos); - OK
+6. Rastrear os erros e envia-los ao Crashlytics; - OK
 7. Armazenar na base de dados local (preferência por WatermelonDB, mas pode usar outro banco de dados) o usuário logado e sua última posição no mapa;
 8. Testar fluxo de login (unit e e2e);
 9. Testar fluxo da home (unit e e2e).
