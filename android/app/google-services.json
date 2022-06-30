@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "42468331832",
+    "project_id": "challengemobile-a4cb5",
+    "storage_bucket": "challengemobile-a4cb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42468331832:android:6189bca92cd7678f1c71cd",
+        "android_client_info": {
+          "package_name": "com.gmail.jaksonpaulino65.desafio_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42468331832-l9pmich1eh0lm3kq4ja2sj03c78pkg3i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gmail.jaksonpaulino65.desafio_mobile",
+            "certificate_hash": "70bcb8f4f61f1866b528d7630cd730bcae2f4e62"
+          }
+        },
+        {
+          "client_id": "42468331832-nvuca5f2tdjgq28em7gcumnhkdk2ivor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBamdT9j8SdPVZS7-AtXRzPZWt84kXJepQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42468331832-nvuca5f2tdjgq28em7gcumnhkdk2ivor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
