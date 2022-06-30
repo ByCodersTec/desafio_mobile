@@ -13,7 +13,7 @@ void main() {
   final repository = AuthRepositoryMock();
   final usecase = AuthUserUsecase(repository);
 
-  test('deve retornar os dados de usuario logado', () async {
+  test('should return the data of the logged in user', () async {
     final auth = AuthUser(email: 'login', password: 'password');
 
     when(() => repository.authUser(auth)).thenAnswer((_) async => right(User(uid: '', email: '')));
@@ -23,11 +23,24 @@ void main() {
     expect(result.fold(id, id), isA<User>());
   });
 
-  test('deve retornar um AuthException se enviar  o login ou password vazio', () async {
-    final auth = AuthUser(email: '', password: '');
+  test('should return an AuthException if it sends the login empty or null', () async {
+    final auth = AuthUser(email: '', password: '00');
+    const falire = FalireException('error');
+
+    when(() => repository.authUser(auth)).thenAnswer((_) async => left(falire));
 
     final result = await usecase(auth);
 
-    expect(result.fold(id, id), isA<AuthException>());
+    expect(result.fold(id, id), isA<FalireException>());
+  });
+  test('should return an AuthException if it sends the password empty or null', () async {
+    final auth = AuthUser(email: 'a', password: '');
+    const falire = FalireException('error');
+
+    when(() => repository.authUser(auth)).thenAnswer((_) async => left(falire));
+
+    final result = await usecase(auth);
+
+    expect(result.fold(id, id), isA<FalireException>());
   });
 }

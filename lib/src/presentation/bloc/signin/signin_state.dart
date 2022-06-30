@@ -1,5 +1,5 @@
-import '../../domain/entities/user.dart';
-import '../../domain/errors/errors.dart';
+import '../../../domain/entities/user.dart';
+import '../../../domain/errors/errors.dart';
 
 abstract class SigninState {}
 
@@ -14,7 +14,7 @@ class SigninStateAuthFinished implements SigninState {
 }
 
 class SigninStateAuthFailure implements SigninState {
-  final IErrorsException authException;
+  final IErrorsException errorException;
 
-  SigninStateAuthFailure(this.authException);
+  SigninStateAuthFailure(this.errorException);
 }

@@ -1,15 +1,15 @@
-class AuthenticationUserForm {
+class AuthUserForm {
   final bool isValid;
   final String? username;
   final String? password;
 
-  AuthenticationUserForm({
+  AuthUserForm({
     required this.isValid,
     this.username,
     this.password,
   });
 
-  AuthenticationUserForm.fromFormFields(Map<String, dynamic> fields)
+  AuthUserForm.fromFormFields(Map<String, dynamic> fields)
       : isValid = fields['isValid'],
         username = fields['email'],
         password = fields['password'];

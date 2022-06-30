@@ -6,8 +6,6 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'src/external/datasources/db_datasource.dart';
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -21,8 +19,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final datadource = context.read<DBDatasource>();
-    datadource.addLocalizationDB();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

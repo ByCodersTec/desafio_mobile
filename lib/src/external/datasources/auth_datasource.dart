@@ -1,4 +1,4 @@
-import 'package:desafio_mobile/src/data/datadources/auth_datasource.dart';
+import 'package:desafio_mobile/src/data/datasources/auth_datasource.dart';
 import 'package:desafio_mobile/src/domain/errors/errors.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,7 +37,7 @@ class AuthDatasource implements IAuthDatasource {
       );
       crashlytics.recordError(e.message!, s);
 
-      throw DatasourcePostException(e.message!, s);
+      throw FalireException(e.message!, s);
     }
   }
 }

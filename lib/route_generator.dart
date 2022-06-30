@@ -1,4 +1,6 @@
+import 'package:desafio_mobile/src/domain/entities/user.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'src/presentation/pages/home_page.dart';
 import 'src/presentation/pages/signin_page.dart';
@@ -11,7 +13,17 @@ class RouteGenerator {
       case '/login':
         return MaterialPageRoute(builder: (context) => const SigninPage());
       case '/home':
-        return MaterialPageRoute(builder: (context) => const HomePage());
+        if ((args! as List)[0] is User) {
+          if ((args as List)[1] is LatLng) {
+            return MaterialPageRoute(
+              builder: (context) => HomePage(
+                user: (args)[0],
+                position: args[1],
+              ),
+            );
+          }
+        }
+        return _erroRoute();
       default:
         _erroRoute();
         return _erroRoute();

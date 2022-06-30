@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../../shared/data_struct/auth.dart';
-import '../datadources/auth_datasource.dart';
+import '../datasources/auth_datasource.dart';
 
 class AuthRepository extends IAuthRepository {
   final IAuthDatasource _authDatasource;

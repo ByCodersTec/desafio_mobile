@@ -15,11 +15,11 @@ class AuthUserUsecase implements IAuthUserUsecase {
 
   @override
   Future<Either<IErrorsException, User>> call(AuthUser authUser) async {
-    if (authUser.email.isEmpty) {
-      return left(const AuthException('login is empty'));
+    if (authUser.email.isEmpty || authUser.email == '') {
+      return left(const FalireException('login is empty or null'));
     }
-    if (authUser.email.isEmpty) {
-      return left(const AuthException('password is empty'));
+    if (authUser.password.isEmpty || authUser.password == '') {
+      return left(const FalireException('password is empty or null'));
     }
     final result = await _repository.authUser(authUser);
     return result;

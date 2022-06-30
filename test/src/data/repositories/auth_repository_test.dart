@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:desafio_mobile/src/shared/data_struct/auth.dart';
-import 'package:desafio_mobile/src/data/datadources/auth_datasource.dart';
+import 'package:desafio_mobile/src/data/datasources/auth_datasource.dart';
 import 'package:desafio_mobile/src/data/repositories/auth_repository.dart';
 import 'package:desafio_mobile/src/domain/entities/user.dart';
 import 'package:flutter_test/flutter_test.dart';

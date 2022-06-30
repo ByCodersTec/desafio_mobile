@@ -1,9 +1,9 @@
-import 'package:desafio_mobile/src/presentation/bloc/signin_event.dart';
-import 'package:desafio_mobile/src/presentation/bloc/signin_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/usecases/auth_user_usecase.dart';
-import '../../shared/data_struct/auth.dart';
+import '../../../domain/usecases/auth_user_usecase.dart';
+import '../../../shared/data_struct/auth.dart';
+import 'signin_event.dart';
+import 'signin_state.dart';
 
 class SigninBloc extends Bloc<SigninEvent, SigninState> {
   final IAuthUserUsecase authUserUsecase;
