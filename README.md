@@ -1,33 +1,90 @@
 # Desafio programação - para vaga desenvolvedor Mobile
-Por favor leiam este documento do começo ao fim, com muita atenção.
-O intuito deste teste é avaliar seus conhecimentos técnicos em desenvolvimento mobile.
-Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas para finalizar.
 
-# Instruções de entrega do desafio
+## 📄 Licença
 
-1. Primeiro, faça um fork deste projeto para sua conta no Github (crie uma se você não possuir).
-2. Em seguida, implemente o projeto,tal qual descrito abaixo, utilizando sua linguagem de programação mobile preferida em seu clone local.
-3. Por fim, envie via email o projeto ou o fork/link do projeto para seu contato bycoders_.
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/jackson-paulino/desafio_mobile/blob/main/LICENSE)
 
-# Descrição do projeto
+# Sobre o Projeto
 
-1. Tela de login usando (email e senha); - OK
-2. Tela home com mapa renderizando um ponto na localização atual do device;
-3. Realizar o login utilizando Firebase Auth; - OK
-4. Armazenar os dados do usuário na store global; - OK
-5. Rastrear login com sucesso e renderização com sucesso com Analytics (enviar um evento com dados considerados primordiais nesses dois casos); - OK
-6. Rastrear os erros e envia-los ao Crashlytics; - OK
-7. Armazenar na base de dados local (preferência por WatermelonDB, mas pode usar outro banco de dados) o usuário logado e sua última posição no mapa;
-8. Testar fluxo de login (unit e e2e);
-9. Testar fluxo da home (unit e e2e).
+Este projeto tem como foco mostrar um pouco do conhecimento técnicos durante o teste seletivo para a vaga de Desenvolvedor Front-end Flutter Pleno na empresa Nextar Tecnologia de Software Ltda.
 
-# Avaliação
+O Aplicativo possibilita o controle de produtos sendo possível criar novos produtos, edição e exclusão.
 
-Seu projeto será avaliado de acordo com os seguintes critérios.
+## Layout Mobile
+<br><br>
+<div align="left">
+ <img height="900" src="https://user-images.githubusercontent.com/91484224/176592201-5a918c6c-bbbd-44cd-98e7-3ecd445128dd.jpeg"><span style="padding-left:2px"></span>
+ <img   height="900" src="https://user-images.githubusercontent.com/91484224/176592197-91f098f7-9a8d-4f78-8ae8-21fa6a70b4df.jpeg"><span style="padding-left:2px"></span>
+ </div>
+ <br><br>
 
-1. Sua aplicação preenche os requerimentos básicos?
-2. Você documentou a maneira de configurar o ambiente e rodar sua aplicação?
-3. Você seguiu as instruções de envio do desafio?
-4. Qualidade e cobertura dos testes unitários.
+## 📦 Desenvolvimento
 
-Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
+
+### 📋 Tecnologias Utilizadas
+
+- Flutter 3.0.3
+- Dart SDK version: 2.17.5
+
+*Ultizando suporte de segurança nula*
+
+ ### Dependência do Projeto
+
+   - dio: ^4.0.6
+   - dartz: ^0.10.1
+   - firebase_auth: ^3.3.20
+   - cloud_firestore: ^3.1.18
+   - flutter_bloc: ^8.0.1
+   - flutter_modular: ^5.0.3
+   - flutter_form_builder: ^7.3.1
+   - form_builder_validators: ^8.1.1
+   - firebase_analytics: ^9.1.10
+   - firebase_crashlytics: ^2.8.2
+   - moor_flutter: ^4.1.0
+   - geolocator: ^9.0.0
+   - google_maps_flutter: ^2.1.8
+
+ ### Dependência de Desenvolvimento
+
+   - flutter_lints: ^2.0.0
+   - mocktail: ^0.3.0
+   - moor_generator: ^4.6.0+1
+   - build_runner: ^2.1.11
+
+ ### Metodo de implementação
+
+   - Arquitetura (Clean Architecture)
+
+## 🔧 Instalação
+
+ 
+ *Link de Instalação do Flutter* - https://flutter.dev/docs/get-started/install
+ 
+ *Link de Intalação do Dart para ultilizar o Slidy* - https://dart.dev/get-dart
+
+```bash
+# Intalação do packege Slidy no Dart 
+dart pub global activate slidy
+
+# Clone do Projeto 
+git clone https://github.com/JackPaulino/dex_control_product.git
+
+# Baixar as dependências
+Flutter pub get
+```
+
+## ✒️ Dados para efetuar o login no App 
+      E-mail: bycoders@bycoders.com.br
+      password: @bycoders
+
+## ✒️ Autores
+
+ * *Desenvolvedor* - Jakson Henrique de Almeida Paulino
+ * *Linkedin* - https://www.linkedin.com/in/jakson-henrique-de-almeida-paulino-28437b121/
+
+## 🎁 Expressões de gratidão
+
+ * Agradeço a oportunidade de participar desse teste seletivo 📢
+
+---
+⌨️ com ❤️ por [Jakson Henrique] (https://github.com/JackPaulino) 😊
