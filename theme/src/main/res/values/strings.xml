@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="detail_gender">Gênero</string>
+    <string name="detail_height">Altura</string>
+    <string name="detail_eye_color">Cor dos olhos</string>
+    <string name="detail_skin_color">Cor da pele</string>
+</resources>
