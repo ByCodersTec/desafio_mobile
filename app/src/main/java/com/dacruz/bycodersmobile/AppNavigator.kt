@@ -46,7 +46,7 @@ fun SplashScreen(navigationHandler: NavigationHandler) {
     LaunchedEffect(Unit) {
         delay(2000L)
         alpha.animateTo(0f, animationSpec = tween(durationMillis = 1000))
-        navigationHandler.navigateTo(Screen.LoginScreen, /*pop = Screen.SplashScreen*/)
+        navigationHandler.navigateTo(Screen.LoginScreen, pop = Screen.SplashScreen)
     }
     Box(
         modifier = Modifier.fillMaxSize(),
