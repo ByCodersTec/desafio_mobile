@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "778288842861",
+    "project_id": "bycodersmobile",
+    "storage_bucket": "bycodersmobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778288842861:android:86a39a54554ee16f911764",
+        "android_client_info": {
+          "package_name": "com.dacruz.bycodersmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU2NTjL2ndcMzA4kYhPwWDv3bMPbtWlhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
