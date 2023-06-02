@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="location_permission_needed">Permissão de Localização Necessária</string>
+  <string name="location_permission_needed_message">Esta funcionalidade requer a permissão de localização. Por favor, conceda a permissão nas configurações do aplicativo.</string>
+  <string name="location_permission_rationale">Title do diálogo</string>
+  <string name="location_permission_rationale_message">Mensagem do diálogo</string>
+
+  <string name="location_permission_denied">Permissão de localização negada</string>
+  <string name="location_permission_denied_message">A permissão de localização é necessária para exibir o mapa.</string>
+
+  <string name="ok">OK</string>
+</resources>
